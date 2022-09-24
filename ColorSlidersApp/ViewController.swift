@@ -21,7 +21,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         colorView.layer.cornerRadius = 25
+//        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.00)
+        
+        let startTextOfValue = "0.0"
+        
+        redSliderValue.text = startTextOfValue
+        greenSliderValue.text = startTextOfValue
+        blueSliderValue.text = startTextOfValue
         
         setupSliders()
     }
@@ -34,7 +42,7 @@ class ViewController: UIViewController {
         blueSlider.value = sliderValue
         
         let sliderMinValue: Float = 0.0
-        let sliderMaxValue: Float = 255
+        let sliderMaxValue: Float = 1
         
         redSlider.minimumValue = sliderMinValue
         redSlider.maximumValue = sliderMaxValue
@@ -47,15 +55,22 @@ class ViewController: UIViewController {
         blueSlider.minimumValue = sliderMinValue
         blueSlider.maximumValue = sliderMaxValue
         blueSlider.minimumTrackTintColor = .systemIndigo
+        
     }
 
     @IBAction func redSliderTapped() {
+        let roundedValue = round(redSlider.value * 100)/100
+        redSliderValue.text = roundedValue.formatted()
     }
     
     @IBAction func greenSliderTapped() {
+        let roundedValue = round(greenSlider.value * 100)/100
+        greenSliderValue.text = roundedValue.formatted()
     }
     
     @IBAction func blueSliderTapped() {
+        let roundedValue = round(blueSlider.value * 100)/100
+        blueSliderValue.text = roundedValue.formatted()
     }
 }
 

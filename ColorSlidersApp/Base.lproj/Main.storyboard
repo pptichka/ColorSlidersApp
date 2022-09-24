@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25D-3h-uNa">
                                 <rect key="frame" x="16" y="99" width="398" height="128"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="7Ek-XX-1SI"/>
                                 </constraints>
@@ -56,18 +56,21 @@
                                         <rect key="frame" x="-2" y="0.0" width="313" height="31"/>
                                         <connections>
                                             <action selector="redSliderIsTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="OTO-ae-FdP"/>
+                                            <action selector="redSliderTapped" destination="BYZ-38-t0r" eventType="valueChanged" id="fZa-Vb-O7b"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZO1-dm-S40">
-                                        <rect key="frame" x="-2" y="45" width="313" height="31"/>
+                                        <rect key="frame" x="-2" y="44" width="313" height="31"/>
                                         <connections>
                                             <action selector="greenSliderIsTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="rgN-by-gd4"/>
+                                            <action selector="greenSliderTapped" destination="BYZ-38-t0r" eventType="valueChanged" id="IDi-Qm-5a4"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="s4W-3t-i26">
                                         <rect key="frame" x="-2" y="90" width="313" height="31"/>
                                         <connections>
                                             <action selector="blueSliderIsTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="cm8-QA-TG6"/>
+                                            <action selector="blueSliderTapped" destination="BYZ-38-t0r" eventType="valueChanged" id="ML3-cz-tFa"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -117,12 +120,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="s4W-3t-i26" id="Vsu-Su-bLP"/>
+                        <outlet property="blueSlider" destination="s4W-3t-i26" id="gdF-70-rmN"/>
+                        <outlet property="blueSliderValue" destination="seF-cv-XUZ" id="bJs-UO-pgO"/>
                         <outlet property="blueValue" destination="seF-cv-XUZ" id="o6Q-Cq-fha"/>
                         <outlet property="clorView" destination="25D-3h-uNa" id="HIl-9j-4tA"/>
-                        <outlet property="greenSlider" destination="ZO1-dm-S40" id="sed-CN-xIp"/>
+                        <outlet property="colorView" destination="25D-3h-uNa" id="mqn-6P-VOs"/>
+                        <outlet property="greenSlider" destination="ZO1-dm-S40" id="Nik-EC-2uz"/>
+                        <outlet property="greenSliderValue" destination="fOt-UO-Nea" id="xr6-PN-Egq"/>
                         <outlet property="greenValue" destination="fOt-UO-Nea" id="Vv4-sb-Uhh"/>
-                        <outlet property="redSlider" destination="Y69-CR-Ru8" id="Ver-c4-HHV"/>
+                        <outlet property="redSlider" destination="Y69-CR-Ru8" id="CH5-8k-sgV"/>
+                        <outlet property="redSliderValue" destination="9DY-xV-EXr" id="NBD-y0-kR3"/>
                         <outlet property="redValue" destination="9DY-xV-EXr" id="baH-8z-y79"/>
                     </connections>
                 </viewController>
@@ -134,9 +141,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

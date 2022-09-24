@@ -9,29 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var clorView: UIView!
-    
-    @IBOutlet var redValue: UILabel!
-    @IBOutlet var greenValue: UILabel!
-    @IBOutlet var blueValue: UILabel!
+    @IBOutlet var colorView: UIView!
     
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    
+    @IBOutlet var redSliderValue: UILabel!
+    @IBOutlet var greenSliderValue: UILabel!
+    @IBOutlet var blueSliderValue: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
-
-    
-    @IBAction func redSliderIsTapped(_ sender: UISlider) {
-    }
-
-    @IBAction func greenSliderIsTapped(_ sender: UISlider) {
+    @IBAction func redSliderTapped() {
     }
     
-    @IBAction func blueSliderIsTapped(_ sender: UISlider) {
+    @IBAction func greenSliderTapped() {
+    }
+    
+    @IBAction func blueSliderTapped() {
     }
 }
 

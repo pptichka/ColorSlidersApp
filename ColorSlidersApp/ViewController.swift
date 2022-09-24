@@ -8,13 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
-    
     
     @IBOutlet var redSliderValue: UILabel!
     @IBOutlet var greenSliderValue: UILabel!

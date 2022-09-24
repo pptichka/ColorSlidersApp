@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redSlider: UISlider!
@@ -23,7 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = 25
-//        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.00)
         
         let startTextOfValue = "0.0"
         
@@ -32,7 +33,11 @@ class ViewController: UIViewController {
         blueSliderValue.text = startTextOfValue
         
         setupSliders()
+        changeViewColor()
     }
+    
+    
+    // MARK: - Private Methods
     
     private func setupSliders() {
         let sliderValue: Float = 0.0
@@ -57,7 +62,18 @@ class ViewController: UIViewController {
         blueSlider.minimumTrackTintColor = .systemIndigo
         
     }
+    
+    private func changeViewColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1.00
+        )
+    }
 
+    // MARK: - IBActiond
+    
     @IBAction func redSliderTapped() {
         let roundedValue = round(redSlider.value * 100)/100
         redSliderValue.text = roundedValue.formatted()

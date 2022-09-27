@@ -25,42 +25,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = 25
-        
-        let startTextOfValue = "0.0"
-        
-        redSliderValue.text = startTextOfValue
-        greenSliderValue.text = startTextOfValue
-        blueSliderValue.text = startTextOfValue
-        
-        setupSliders()
         changeViewColor()
+    
+        setValue()
     }
     
     
+    // MARK: - IBActiond
+    
+    @IBAction func slidersTapped() {
+        setValue()
+        changeViewColor()
+    }
+    
     // MARK: - Private Methods
     
-    private func setupSliders() {
-        let sliderValue: Float = 0.0
-        
-        redSlider.value = sliderValue
-        greenSlider.value = sliderValue
-        blueSlider.value = sliderValue
-        
-        let sliderMinValue: Float = 0.0
-        let sliderMaxValue: Float = 1
-        
-        redSlider.minimumValue = sliderMinValue
-        redSlider.maximumValue = sliderMaxValue
-        redSlider.minimumTrackTintColor = .systemRed
-        
-        greenSlider.maximumValue = sliderMinValue
-        greenSlider.maximumValue = sliderMaxValue
-        greenSlider.minimumTrackTintColor = .systemGreen
-        
-        blueSlider.minimumValue = sliderMinValue
-        blueSlider.maximumValue = sliderMaxValue
-        blueSlider.minimumTrackTintColor = .systemIndigo
-        
+    private func setValue() {
+        redSliderValue.text = String(format: "%.2f", redSlider.value)
+        greenSliderValue.text = String(format: "%.2f", greenSlider.value)
+        blueSliderValue.text = String(format: "%.2f", blueSlider.value)
     }
     
     private func changeViewColor() {
@@ -72,21 +55,6 @@ class ViewController: UIViewController {
         )
     }
 
-    // MARK: - IBActiond
-    
-    @IBAction func redSliderTapped() {
-        let roundedValue = round(redSlider.value * 100)/100
-        redSliderValue.text = roundedValue.formatted()
-    }
-    
-    @IBAction func greenSliderTapped() {
-        let roundedValue = round(greenSlider.value * 100)/100
-        greenSliderValue.text = roundedValue.formatted()
-    }
-    
-    @IBAction func blueSliderTapped() {
-        let roundedValue = round(blueSlider.value * 100)/100
-        blueSliderValue.text = roundedValue.formatted()
-    }
+   
 }
 

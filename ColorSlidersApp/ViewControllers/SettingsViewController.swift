@@ -35,6 +35,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = 25
+        startVCBackround = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1.00
+        )
+        colorView.backgroundColor = startVCBackround
         changeViewColor()
     
         showValue()

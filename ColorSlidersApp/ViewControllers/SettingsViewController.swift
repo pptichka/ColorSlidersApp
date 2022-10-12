@@ -26,6 +26,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
+    // MARK: - Public Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,11 +44,14 @@ class SettingsViewController: UIViewController {
     }
     
     
-    // MARK: - IBActiond
+    // MARK: - IBActions
     
     @IBAction func slidersTapped() {
         setValue()
         changeViewColor()
+    }
+    
+    @IBAction func applyChanges() {
     }
     
     // MARK: - Private Methods
@@ -65,7 +70,14 @@ class SettingsViewController: UIViewController {
             alpha: 1.00
         )
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
+
+// MARK: - UITextField Methods
 
 extension UITextField {
     

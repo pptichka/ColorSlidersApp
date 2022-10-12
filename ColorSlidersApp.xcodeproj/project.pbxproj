@@ -37,6 +37,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B8B38B128F6CA8400C684C5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B8CA93D28DF4BBF0035E603 /* AppDelegate.swift */,
+				8B8CA93F28DF4BBF0035E603 /* SceneDelegate.swift */,
+				8B8CA94B28DF4BC00035E603 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B8B38B228F6CA9900C684C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B8CA94128DF4BBF0035E603 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8B8B38B328F6CACD00C684C5 /* Storyoards */ = {
+			isa = PBXGroup;
+			children = (
+				8B8CA94328DF4BBF0035E603 /* Main.storyboard */,
+				8B8CA94828DF4BC00035E603 /* LaunchScreen.storyboard */,
+			);
+			path = Storyoards;
+			sourceTree = "<group>";
+		};
 		8B8CA93128DF4BBF0035E603 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +83,10 @@
 		8B8CA93C28DF4BBF0035E603 /* ColorSlidersApp */ = {
 			isa = PBXGroup;
 			children = (
-				8B8CA93D28DF4BBF0035E603 /* AppDelegate.swift */,
-				8B8CA93F28DF4BBF0035E603 /* SceneDelegate.swift */,
-				8B8CA94128DF4BBF0035E603 /* ViewController.swift */,
-				8B8CA94328DF4BBF0035E603 /* Main.storyboard */,
+				8B8B38B128F6CA8400C684C5 /* App */,
+				8B8B38B228F6CA9900C684C5 /* ViewControllers */,
+				8B8B38B328F6CACD00C684C5 /* Storyoards */,
 				8B8CA94628DF4BC00035E603 /* Assets.xcassets */,
-				8B8CA94828DF4BC00035E603 /* LaunchScreen.storyboard */,
-				8B8CA94B28DF4BC00035E603 /* Info.plist */,
 			);
 			path = ColorSlidersApp;
 			sourceTree = "<group>";

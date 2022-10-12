@@ -176,15 +176,15 @@
                     <navigationItem key="navigationItem" id="gis-gH-L28"/>
                     <connections>
                         <outlet property="blueSlider" destination="s4W-3t-i26" id="WNY-IS-Wwd"/>
-                        <outlet property="blueSliderValue" destination="seF-cv-XUZ" id="Gql-SL-zqo"/>
                         <outlet property="blueTextField" destination="a8q-eX-bw4" id="Ahp-lA-ghc"/>
+                        <outlet property="blueValueLabel" destination="seF-cv-XUZ" id="Gql-SL-zqo"/>
                         <outlet property="colorView" destination="25D-3h-uNa" id="eKS-QM-iiI"/>
                         <outlet property="greenSlider" destination="ZO1-dm-S40" id="PVn-HC-fOc"/>
-                        <outlet property="greenSliderValue" destination="fOt-UO-Nea" id="X80-rJ-KcS"/>
                         <outlet property="greenTextField" destination="lTH-h9-R42" id="MXb-pf-Pui"/>
+                        <outlet property="greenValueLabel" destination="fOt-UO-Nea" id="X80-rJ-KcS"/>
                         <outlet property="redSlider" destination="Y69-CR-Ru8" id="RSg-HJ-4Nd"/>
-                        <outlet property="redSliderValue" destination="9DY-xV-EXr" id="LFv-zA-0hl"/>
                         <outlet property="redTextField" destination="jth-7k-5Qo" id="Ymb-5D-X82"/>
+                        <outlet property="redValueLabel" destination="9DY-xV-EXr" id="LFv-zA-0hl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

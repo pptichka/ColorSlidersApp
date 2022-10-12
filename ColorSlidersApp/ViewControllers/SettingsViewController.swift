@@ -17,16 +17,17 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    @IBOutlet var redSliderValue: UILabel!
-    @IBOutlet var greenSliderValue: UILabel!
-    @IBOutlet var blueSliderValue: UILabel!
+    @IBOutlet var redValueLabel: UILabel!
+    @IBOutlet var greenValueLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
     
     
     @IBOutlet var redTextField: UITextField!
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    var viewColor: UIColor!
+    var startVCBackround: UIColor!
+    var delegate: SettingsViewControllerDelegate!
     
     // MARK: - Public Methods
     
@@ -36,7 +37,7 @@ class SettingsViewController: UIViewController {
         colorView.layer.cornerRadius = 25
         changeViewColor()
     
-        setValue()
+        showValue()
         
         redTextField.addDoneButtonOnKeyboard()
         greenTextField.addDoneButtonOnKeyboard()
@@ -48,19 +49,20 @@ class SettingsViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func slidersTapped() {
-        setValue()
+        showValue()
         changeViewColor()
     }
     
     @IBAction func applyChanges() {
+        delegate.setNewValue(for: startVCBackround)
     }
     
     // MARK: - Private Methods
     
-    private func setValue() {
-        redSliderValue.text = String(format: "%.2f", redSlider.value)
-        greenSliderValue.text = String(format: "%.2f", greenSlider.value)
-        blueSliderValue.text = String(format: "%.2f", blueSlider.value)
+    private func showValue() {
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
+        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
     }
     
     private func changeViewColor() {

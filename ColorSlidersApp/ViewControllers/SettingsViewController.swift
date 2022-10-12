@@ -83,12 +83,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func applyChanges() {
         delegate.setNewValue(for: startVCBackround)
+        
+        guard redTextField.text == String(format: "%.2f"),
+              greenTextField.text == String(format: "%.2F"),
+              blueTextField.text == String(format: "%.2F")
+        else {
+            showAlert(
+                title: "Error",
+                message: "Incorrect form of value. Please choose another value from 0.00 to 1.00.",
+                textField: redTextField
+            )
+            return
+        }
     }
     
-    @IBAction func redTFEndEditing() {
-        redValueLabel.text = redTextField.text
-        
-    }
     
     // MARK: - Private Methods
     
@@ -111,6 +119,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
 // MARK: - UITextField Methods

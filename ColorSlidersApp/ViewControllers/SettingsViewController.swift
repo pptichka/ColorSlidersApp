@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlets
     
@@ -40,10 +40,31 @@ class SettingsViewController: UIViewController {
         showValue()
         
         redTextField.addDoneButtonOnKeyboard()
+        redTextField.delegate = self
         greenTextField.addDoneButtonOnKeyboard()
+        greenTextField.delegate = self
         blueTextField.addDoneButtonOnKeyboard()
+        blueTextField.delegate = self
         
         navigationItem.hidesBackButton = true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        redValueLabel.text = redTextField.text
+        redSlider.value = Float(redTextField.text!) ?? 0.0
+        
+        greenValueLabel.text = greenTextField.text
+        greenSlider.value = Float(greenTextField.text!) ?? 0.0
+        
+        blueValueLabel.text = blueTextField.text
+        blueSlider.value = Float(blueTextField.text!) ?? 0.0
+        
+        changeViewColor()
     }
     
     // MARK: - IBActions
@@ -57,12 +78,21 @@ class SettingsViewController: UIViewController {
         delegate.setNewValue(for: startVCBackround)
     }
     
+    @IBAction func redTFEndEditing() {
+        redValueLabel.text = redTextField.text
+        
+    }
+    
     // MARK: - Private Methods
     
     private func showValue() {
         redValueLabel.text = String(format: "%.2f", redSlider.value)
         greenValueLabel.text = String(format: "%.2f", greenSlider.value)
         blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+        
+        redTextField.text = redValueLabel.text
+        greenTextField.text = greenValueLabel.text
+        blueTextField.text = blueValueLabel.text
     }
     
     private func changeViewColor() {
@@ -74,10 +104,6 @@ class SettingsViewController: UIViewController {
         )
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
 }
 
 // MARK: - UITextField Methods
@@ -120,4 +146,7 @@ extension UITextField {
         self.resignFirstResponder()
     }
 }
+
+// MARK: UI
+
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
     
     // MARK: - IBOutlets
     
@@ -20,6 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet var redSliderValue: UILabel!
     @IBOutlet var greenSliderValue: UILabel!
     @IBOutlet var blueSliderValue: UILabel!
+    
+    
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +59,5 @@ class ViewController: UIViewController {
             alpha: 1.00
         )
     }
-
-   
 }
 

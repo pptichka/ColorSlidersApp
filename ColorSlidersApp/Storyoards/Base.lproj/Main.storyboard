@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="RuY-sJ-rjy">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="f3I-Pu-W1o">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="Ny1-m5-IuG"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="showSettings" id="Ny1-m5-IuG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

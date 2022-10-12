@@ -13,4 +13,11 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let settingsVC = navigationVC.topViewController as? SettingsViewController else { return }
+        
+        view.backgroundColor = settingsVC.viewColor
+    }
 }

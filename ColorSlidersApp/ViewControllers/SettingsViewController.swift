@@ -26,6 +26,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
+    var viewColor: UIColor!
+    
     // MARK: - Public Methods
     
     override func viewDidLoad() {
@@ -42,7 +44,6 @@ class SettingsViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
     }
-    
     
     // MARK: - IBActions
     
@@ -90,6 +91,7 @@ extension UITextField {
                 height: 50
             )
         )
+        
         doneToolbar.barStyle = .default
         
         let flexSpace = UIBarButtonItem(
@@ -97,6 +99,7 @@ extension UITextField {
             target: nil,
             action: nil
         )
+        
         let done: UIBarButtonItem = UIBarButtonItem(
             title: "Done",
             style: .done,
